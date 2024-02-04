@@ -1,0 +1,12 @@
+.idea/
+node_modules/
+build/
+temp/
+.env
+coverage
+ormconfig.json
+dist
+/*.js
+
+uploads/*
+!uploads/.gitkeep

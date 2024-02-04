@@ -9,18 +9,18 @@ const { google } = require('googleapis');
 async function listMajors(auth) {
   const sheets = google.sheets({ version: 'v4', auth });
   const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-    range: 'Class Data!A2:E',
+    spreadsheetId: '1suhl0E42dFiu0pF-J9btLCK3hTwIU8o_degvq-KRwQM',
+    range: 'engenharia_de_software!A4:F',
   });
   const rows = res.data.values;
   if (!rows || rows.length === 0) {
     console.log('No data found.');
     return;
   }
-  console.log('Name, Major:');
+  console.log('Matricula, Aluno:');
   rows.forEach(row => {
     // Print columns A and E, which correspond to indices 0 and 4.
-    console.log(`${row[0]}, ${row[4]}`);
+    console.log(`${row[0]}, ${row[1]}`);
   });
 }
 const initialize = authorize().then(listMajors).catch(console.error);
